@@ -1,0 +1,31 @@
+git add netlify.toml
+git commit -m "config: Add Netlify TOML for Angular deployment"
+git push
+
+---
+
+### **Phase 3: Deploy to Netlify**
+
+1.  **Go to Netlify:** Log in to your Netlify account.
+2.  Click **"Add new site"** -> **"Import an existing project."**
+3.  Select **GitHub** and authorize Netlify.
+4.  Find and select your **`didkobravo-portfolio`** repository.
+5.  **Review Build Settings:** Netlify will suggest the settings.
+    * **Build Command:** `npm run build`
+    * **Publish directory:** `dist/didkobravo-portfolio/browser`
+    * **Branch to deploy:** `main` (or `master`)
+6.  Click **"Deploy site."**
+
+Netlify will start building your Angular project. Once complete, you will have a live URL (e.g., `inquisitive-cat.netlify.app`) where your site is accessible!
+
+---
+
+### **Phase 4: Domain Routing (didkobravo.com)**
+
+Once your Netlify site is live, this is how you connect it to your custom domain, `didkobravo.com`:
+
+1.  **In Netlify:** Go to **Site settings** -> **Domain management** -> **Add a custom domain**. Enter `didkobravo.com`.
+2.  **Choose DNS:** Netlify will give you two options: using their nameservers or using A/CNAME records. The easiest is to update your domain registrar (GoDaddy, Namecheap, etc.) to use **Netlify's Nameservers**.
+3.  **In Your Domain Registrar:** Log in and change the nameservers for `didkobravo.com` to the addresses Netlify provides (usually four addresses).
+
+After this change, it can take anywhere from 1 to 24 hours for the change to propagate globally, and your `didkobravo.com` site will point directly to your Angular app deployed on Netlify.
