@@ -2,7 +2,7 @@
   # Command to build the Angular app
   command = "npm run build"
   # Folder where the compiled static files go (default for ng build)
-  publish = "dist/didkobravo-whodat/browser"
+  publish = "dist/didkobravo/browser"
 
 [[redirects]]
   # This is crucial for Angular routing (so URLs like /systems work)
